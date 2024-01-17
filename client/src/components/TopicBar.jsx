@@ -39,7 +39,7 @@ function TopicBar() {
               onClick={() => dispatch(setOpenChatId(chat._id))}
               key={chat._id}
               to={`/${chat._id}`}
-              className={`flex text-slate-500 items-center gap-1 text-sm p-3 bg-secondary rounded-full border-2 ${
+              className={`flex text-slate-500 items-center gap-1 text-sm text-nowrap overflow-ellipsis p-3 bg-secondary rounded-full border-2 ${
                 openChatId === chat._id
                   ? "border-green-600"
                   : "border-secondary"
@@ -59,7 +59,7 @@ function TopicBar() {
             dispatch(setOpenChatId(""));
             dispatch(clearConversation());
           }}
-          className="flex border-2 border-green-500 rounded-full p-2 text-green-500 gap-1 items-center"
+          className="flex border-2 border-green-500 rounded-full p-2 text-green-500 text-sm gap-2 items-center"
         >
           <PlusCircle size={20} />
           New Chat
@@ -67,7 +67,7 @@ function TopicBar() {
         <Link
           to={"/"}
           onClick={handleDeleteChats}
-          className="flex border-2 border-rose-500 rounded-full p-2 text-rose-500 gap-1 items-center"
+          className="flex border-2 border-rose-500 rounded-full p-2 text-rose-500 text-sm gap-2 items-center"
         >
           <Delete size={20} />
           Clear Conversation
