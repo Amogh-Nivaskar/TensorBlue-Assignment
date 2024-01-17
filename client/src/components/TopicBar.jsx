@@ -39,14 +39,14 @@ function TopicBar() {
               onClick={() => dispatch(setOpenChatId(chat._id))}
               key={chat._id}
               to={`/${chat._id}`}
-              className={`flex text-slate-500 items-center gap-1 text-sm text-nowrap overflow-ellipsis p-3 bg-secondary rounded-full border-2 ${
+              className={`flex text-slate-500 items-center gap-1 text-sm p-3 bg-secondary rounded-full border-2 ${
                 openChatId === chat._id
                   ? "border-green-600"
                   : "border-secondary"
               }`}
             >
               <MessageSquare color="white" size={20} />
-              {chat.title}
+              <span className="">{chat.title}</span>
             </Link>
           ))}
         </div>

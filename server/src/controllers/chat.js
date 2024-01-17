@@ -46,7 +46,7 @@ async function createNewChat(req, res) {
     const { statement } = req.body;
 
     // get chat name from statement by making API call to openAI api
-    const getTitlePrompt = `Give a short title describing this prompt - ${statement}`;
+    const getTitlePrompt = `Give a really short title describing this prompt - ${statement}`;
     const title = await promptAI(getTitlePrompt);
 
     const user = await UserModel.findById(_id);
